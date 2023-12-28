@@ -1,60 +1,20 @@
 <div align="center">
 
-# asdf-ansible ![Build](https://github.com/Bleacks/asdf-ansible/workflows/Build/badge.svg) ![Lint](https://github.com/Bleacks/asdf-ansible/workflows/Lint/badge.svg)
+This is a fork of the [ansible](https://github.com/Bleacks/asdf-ansible-plugin) plugin for the [asdf version manager](https://asdf-vm.com). The main difference is that it does not assume a global install of `python`, and therefore will not expect the `ansible` executable to be installed on your plugin manager's install directory for `ansible`.
 
-[ansible](https://github.com/Bleacks/asdf-ansible-plugin) plugin for the [asdf version manager](https://asdf-vm.com).
+For example, when using the [python plugin](https://github.com/asdf-community/asdf-python) for `asdf`, the `ansible` executable will be installed in the install directory for `python`, because ansible is installed using that install's `pip` executable, not a global one.
+
+More specifically, this fork is useful for avoiding the following error:
+
+```console
++ fail 'Expected /home/cjvirtucio/.local/share/rtx/installs/ansible/9.1.0/bin/ansible to be executable.'
++ echo -e 'asdf-ansible: Expected /home/cjvirtucio/.local/share/rtx/installs/ansible/9.1.0/bin/ansible to be executable.'
+asdf-ansible: Expected /home/cjvirtucio/.local/share/rtx/installs/ansible/9.1.0/bin/ansible to be executable.
++ exit 1
++ rm -rf /home/cjvirtucio/.local/share/rtx/installs/ansible/9.1.0
++ fail 'An error ocurred while installing ansible 9.1.0.'
++ echo -e 'asdf-ansible: An error ocurred while installing ansible 9.1.0.'
++ exit 1
+```
 
 </div>
-
-# Contents
-
-- [Dependencies](#dependencies)
-- [Install](#install)
-- [Why?](#why)
-- [Contributing](#contributing)
-- [License](#license)
-
-# Dependencies
-
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `jq`: for parsing json
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
-
-# Install
-
-Plugin:
-
-```shell
-asdf plugin add ansible
-# or
-asdf plugin add ansible https://github.com/Bleacks/asdf-ansible.git
-```
-
-ansible:
-
-```shell
-# Show all installable versions
-asdf list-all ansible
-
-# Install specific version
-asdf install ansible latest
-
-# Set a version globally (on your ~/.tool-versions file)
-asdf global ansible latest
-
-# Now ansible commands are available
-ansible --version
-```
-
-Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
-install & manage versions.
-
-# Contributing
-
-Contributions of any kind welcome! See the [contributing guide](contributing.md).
-
-[Thanks goes to these contributors](https://github.com/Bleacks/asdf-ansible/graphs/contributors)!
-
-# License
-
-See [LICENSE](LICENSE) © [Bleacks](https://github.com/Bleacks/)
