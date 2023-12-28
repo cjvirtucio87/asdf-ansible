@@ -16,3 +16,11 @@ asdf-ansible: Expected /home/cjvirtucio/.local/share/rtx/installs/ansible/9.1.0/
 + echo -e 'asdf-ansible: An error ocurred while installing ansible 9.1.0.'
 + exit 1
 ```
+
+## Installation
+
+To start using this plugin, add it with your desired manager (e.g. [asdf](https://asdf-vm.com) or [rtx](https://github.com/jdx/rtx)):
+
+```console
+asdf plugins add https://github.com/cjvirtucio87/asdf-ansible.git
+```
