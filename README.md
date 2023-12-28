@@ -1,4 +1,4 @@
-<div align="center">
+# asdf-ansible
 
 This is a fork of the [ansible](https://github.com/Bleacks/asdf-ansible-plugin) plugin for the [asdf version manager](https://asdf-vm.com). The main difference is that it does not assume a global install of `python`, and therefore will not expect the `ansible` executable to be installed on your plugin manager's install directory for `ansible`.
 
@@ -16,5 +16,3 @@ asdf-ansible: Expected /home/cjvirtucio/.local/share/rtx/installs/ansible/9.1.0/
 + echo -e 'asdf-ansible: An error ocurred while installing ansible 9.1.0.'
 + exit 1
 ```
-
-</div>
